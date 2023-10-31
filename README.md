@@ -5,7 +5,7 @@
 ## 1.Simple Array Sum
 
   - [Problem](https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true)
-  - [Solution]()
+  - [Solution](simpleArraySum.py)
   - Explanation:
   >In this problem, we will be calculating the sum of elements in an array using Python. The code prompts the user to enter the number of elements in the array and then takes input for each element. It then calculates the sum of the array and prints the result.
 >
@@ -66,7 +66,7 @@ The sum of the array is: 150
 ## 2.Time Conversion
 
   - [Problem](https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true) 
-  - [Solution](Time_Conversion/timeconversion.py) 
+  - [Solution](TimeConversion.py) 
   - Explanation:
   >In this problem, i write a function called timeConversion that takes a time string in 12-hour format as input and converts it to 24-hour format. The code then prompts the user to enter a time string and calls the timeConversion function to convert the input time.
 >
@@ -117,7 +117,7 @@ output
 ## 3.Mini-Max Sum
 
   - [Problem](https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true)
-  - [Solution](Mini-Max_Sum/minimaxsum.py) 
+  - [Solution](mini-max Sum.py) 
   - Explanation:
   >This problem  takes an array of integers as input and calculates the minimum and maximum sums of four out of the five elements in the array.
 
@@ -156,7 +156,7 @@ output
 ****
 ## 5.Grading Students
   - [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)
-  - [Solution](Grading_Students/gradingstudents.py) 
+  - [Solution](gradeStud.py) 
   - Explanation:
   > In this problem, I created a program that takes input for the number of grades to be entered, and then prompts the user to enter each grade. The program then rounds each grade according to a specific rule and prints the rounded grades.
 > 
@@ -237,7 +237,7 @@ output
 ## 6.Forming a Magic Square
 
   - [Problem](https://www.hackerrank.com/challenges/magic-square-forming/problem?isFullScreen=true)
-  - [Solution]()
+  - [Solution](magicSqr.py)
   - Explanation:
 
 1.magic_squares is a list of all possible 3x3 magic squares, represented as nested lists.
@@ -305,7 +305,7 @@ output
 ## 7.Missing Numbers
 
   - [Problem](https://www.hackerrank.com/challenges/missing-numbers/problem?isFullScreen=true)
-  - [Solution]()
+  - [Solution](missingNumber.py)
   - Explanation:
 
   1.Two dictionaries, count_arr and count_brr, are created to store the counts of numbers in the arr and brr lists, respectively.
@@ -395,7 +395,7 @@ output
 ****
 ## 8.Compare The Tripplets
   - [Problem](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)
-  - [Solution]
+  - [Solution](cmpTripplets.py)
   - Explanation:
   > In this problem, we have a function called ```compareTriplets``` that takes in two lists, a and b, representing the ratings of two people in three different categories. The function compares the ratings of each category and returns the number of points each person has earned.
 
@@ -472,7 +472,7 @@ output
 ## 9.Candies
 
   - [Problem](https://www.hackerrank.com/challenges/candies/problem?isFullScreen=true)
-  - [Solution]()
+  - [Solution](candies.py)
   - Explanation:
 
 1.The program starts by reading an integer 'n' representing the number of students and an array 'arr' containing their performance scores.
@@ -559,7 +559,7 @@ output
 ## 10.StairCase
 
   - [Problem](https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true) (navigate to the Problem)
-  - [Solution]
+  - [Solution](stairCase.py)
   - Explanation:
   >To create the staircase pattern, we will use nested loops and the print() function in Python. The outer loop will iterate over the number of steps, and the inner loops will handle the printing of spaces and "#" symbols.
 
