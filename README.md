@@ -469,3 +469,90 @@ output
 1 1
 ```
 ****
+## 9.Candies
+
+  - [Problem](https://www.hackerrank.com/challenges/candies/problem?isFullScreen=true)
+  - [Solution]()
+  - Explanation:
+
+1.The program starts by reading an integer 'n' representing the number of students and an array 'arr' containing their performance scores.
+
+2.It initializes another array 'candies' of the same length as 'arr' and sets all elements to 1. This array will keep track of the number of candies each student receives.
+
+3.It then iterates through the 'arr' from left to right. If a student's performance is better than the previous student, their 'candies' value is set to one more than the previous student's 'candies'. This ensures that students with higher scores receive more candies.
+
+4.After the left-to-right pass, the program calculates the total number of candies distributed so far.
+
+5.It then iterates through 'arr' from right to left. If a student's performance is better than the next student and they have fewer candies, their 'candies' value is updated to one more than the next student's 'candies'. This ensures that students with higher scores also receive more candies when moving from right to left.
+
+6.After the right-to-left pass, the program calculates the total number of candies distributed.
+
+7.The function returns the total number of candies distributed, and the result is written to the output file.
+
+### Program
+```python
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def candies(n, arr):
+    # Write your code here
+    # Initialize an array of the same length as 'arr' with all elements set to 1
+    candies = [1] * n
+
+    # Traverse 'arr' from left to right
+    for i in range(1, n):
+        if arr[i] > arr[i - 1]:
+            candies[i] = candies[i - 1] + 1
+
+    total_candies = candies[-1]
+
+    # Traverse 'arr' from right to left and update 'candies'
+    for i in range(n - 2, -1, -1):
+        if arr[i] > arr[i + 1] and candies[i] <= candies[i + 1]:
+            candies[i] = candies[i + 1] + 1
+
+        total_candies += candies[i]
+
+    return total_candies
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr_item = int(input().strip())
+        arr.append(arr_item)
+
+    result = candies(n, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+```
+#### Sample input & output
+input
+```
+10
+2
+4
+2
+6
+1
+7
+8
+9
+2
+1
+```
+output
+```
+19
+```
+****
