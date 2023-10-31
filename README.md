@@ -117,7 +117,7 @@ output
 ## 3.Mini-Max Sum
 
   - [Problem](https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true)
-  - [Solution](mini-max Sum.py) 
+  - [Solution](mini-maxSum.py) 
   - Explanation:
   >This problem  takes an array of integers as input and calculates the minimum and maximum sums of four out of the five elements in the array.
 
