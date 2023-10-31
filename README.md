@@ -121,8 +121,6 @@ output
   - Explanation:
   >This problem  takes an array of integers as input and calculates the minimum and maximum sums of four out of the five elements in the array.
 
-#### The miniMaxSum function takes an array (arr) as input and performs the following steps:
-
 1.The program first takes user input as a space-separated list of integers and stores them in the arr list.
 
 2.It calculates the total_sum of all the numbers in the arr list by using the sum function.
@@ -217,7 +215,7 @@ result = gradingStudents(grades)
 # Output
 for res in result:
     print(res)
-write an short and understandable explanation for this program ```
+ ```
 #### Sample input & output
 input
 ```
