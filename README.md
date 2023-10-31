@@ -542,7 +542,7 @@ import re
 import sys
 
 def candies(n, arr):
-    # Write your code here
+
     # Initialize an array of the same length as 'arr' with all elements set to 1
     candies = [1] * n
 
