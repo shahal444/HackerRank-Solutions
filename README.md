@@ -154,6 +154,49 @@ output
 10 14
 ```
 ****
+## 4.Extra Long Factorials
+
+  - [Problem](https://www.hackerrank.com/challenges/extra-long-factorials/problem?isFullScreen=true)
+  - [Solution](extra-LongFact) 
+  - Explanation:
+
+1.The program starts by importing necessary libraries: math, os, random, re, and sys, although they are not used in this specific code.
+
+2.It defines a function called extraLongFactorials that takes an integer 'n' as its parameter. This function calculates the factorial of 'n' using the math.factorial() function and then prints the result.
+
+3.In the if __name__ == '__main__': block, the program first reads an integer 'n' from the user via the input() function.
+
+4.It then calls the extraLongFactorials(n) function, passing the input 'n' as an argument, which calculates the factorial and prints it.
+
+### Program
+```python
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def extraLongFactorials(n):
+    # Write your code here
+    print(math.factorial(n))
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    extraLongFactorials(n)
+
+ ```
+#### Sample input & output
+input
+```
+25
+```
+output
+```
+15511210043330985984000000
+```
+****
 ## 5.Grading Students
   - [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)
   - [Solution](gradeStud.py) 
