@@ -556,3 +556,59 @@ output
 19
 ```
 ****
+## 10.StairCase
+
+  - [Problem](https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true) (navigate to the Problem)
+  - [Solution]
+  - Explanation:
+  >To create the staircase pattern, we will use nested loops and the print() function in Python. The outer loop will iterate over the number of steps, and the inner loops will handle the printing of spaces and "#" symbols.
+
+1.Get an integer 'n' as input, which represents the height of the staircase.
+
+2.For each row, starting from the first row and going up to 'n' rows, do the following:
+
+  a. Calculate the number of spaces needed for the current row. This is equal to 'n' minus the current row number 'i'.
+
+  b. Calculate the number of '#' symbols needed for the current row. This is equal to the current row number 'i'.
+
+3.For each row, first, it prints the calculated number of spaces to create the left indentation of the staircase.
+
+4.Then, it prints the calculated number of '#' symbols, which form the right side of the staircase.
+
+5.The result is a staircase pattern with 'n' rows, where each row has a different number of spaces and '#' symbols, creating a visually appealing ascending staircase.
+
+6.The program repeats this process for each row, ultimately forming a complete staircase pattern.
+
+### Program
+```python
+def staircase(n):
+    for i in range(1, n + 1):
+        # Calculate the number of spaces and # symbols
+        spaces = n - i
+        symbols = i
+        # Print spaces first
+        print(" " * spaces, end="")
+        # Print # symbols
+        print("#" * symbols)
+
+if __name__ == '__main__':
+    n = int(input().strip())
+    staircase(n)
+
+```
+#### Sample input & output
+input
+``` 
+6 
+```
+output
+```
+     #
+    ##
+   ###
+  ####
+ #####
+######
+```
+
+####by Muhammed Shahal
