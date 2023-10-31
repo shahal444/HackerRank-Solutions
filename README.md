@@ -157,7 +157,7 @@ output
 ## 4.Extra Long Factorials
 
   - [Problem](https://www.hackerrank.com/challenges/extra-long-factorials/problem?isFullScreen=true)
-  - [Solution](extra-LongFact) 
+  - [Solution](extra-LongFact.py) 
   - Explanation:
 
 1.The program starts by importing necessary libraries: math, os, random, re, and sys, although they are not used in this specific code.
