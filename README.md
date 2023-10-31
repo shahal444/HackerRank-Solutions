@@ -233,297 +233,163 @@ output
 33
 ```
 ****
-## 2.Birthday Cake Candles
 
-  - [Problem](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Birthday_Cake_Candles/birthdaycakecandles.py) (navigate to the Solution file)
+## 6.Forming a Magic Square
+
+  - [Problem](https://www.hackerrank.com/challenges/magic-square-forming/problem?isFullScreen=true)
+  - [Solution]()
   - Explanation:
-  > In this problem, we write a function called birthdayCakeCandles that takes in a list of candle heights as input and returns the count of the tallest candles. The code also includes an input section where the user can provide the number of candles and their heights.
 
-###--Program--
+1.magic_squares is a list of all possible 3x3 magic squares, represented as nested lists.
+
+2.min_cost is initialized with positive infinity (float('inf')). It will be used to keep track of the minimum cost to transform the input square into a magic square.
+
+3.The program defines a loop to iterate through each of the possible magic squares in magic_squares.
+
+4.For each magic square, it calculates the cost of transforming the input square s into that magic square. The cost is computed as the sum of absolute differences between the corresponding elements of the input square and the magic square.
+
+5.It keeps track of the minimum cost encountered among all magic squares.
+
+6.After looping through all magic squares, the function returns the min_cost, which represents the minimum cost to transform the input square into a magic square.
+
+7.In the if __name__ == '__main__': block, the program reads a 3x3 square from the user as input, stores it in the s list, and then calls the formingMagicSquare function to compute the minimum cost. Finally, it prints the result.
+
+### Program
 ```python
-def birthdayCakeCandles(candles):
-    max_height = max(candles)
-    tallest_candles = candles.count(max_height)
-    return tallest_candles
+def formingMagicSquare(s):
+    # List of all possible 3x3 magic squares
+    magic_squares = [
+        [[8, 1, 6], [3, 5, 7], [4, 9, 2]],
+        [[6, 1, 8], [7, 5, 3], [2, 9, 4]],
+        [[4, 9, 2], [3, 5, 7], [8, 1, 6]],
+        [[2, 9, 4], [7, 5, 3], [6, 1, 8]],
+        [[8, 3, 4], [1, 5, 9], [6, 7, 2]],
+        [[4, 3, 8], [9, 5, 1], [2, 7, 6]],
+        [[6, 7, 2], [1, 5, 9], [8, 3, 4]],
+        [[2, 7, 6], [9, 5, 1], [4, 3, 8]]
+    ]
+
+    min_cost = float('inf')
+
+    for magic_square in magic_squares:
+        cost = 0
+        for i in range(3):
+            for j in range(3):
+                cost += abs(s[i][j] - magic_square[i][j])
+        min_cost = min(min_cost, cost)
+
+    return min_cost
 
 if __name__ == '__main__':
-    candles_count = int(input().strip())
-    candles = list(map(int, input().rstrip().split()))
-    result = birthdayCakeCandles(candles)
+    s = []
+    for _ in range(3):
+        s.append(list(map(int, input().rstrip().split())))
+    result = formingMagicSquare(s)
     print(result)
-```python
 
-
+```
 #### Sample input & output
 input
 ```
-4
-3 2 1 3
+5 3 4
+1 5 8
+6 4 2
 ```
 output
 ```
-2
-```
-In this example, we have a list of candle heights [3,2,1,3]. The tallest candles have a height of 3, and there are 2 candles with that height. Therefore, the output is 2.
-
-****
-
-## 3.Compare The Tripplets
-  - [Problem](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Compare_The_Tripplets/comparethetriplets.py) (navigate to the Solution file)
-  - Explanation:
-  > In this problem, we have a function called ```compareTriplets``` that takes in two lists, a and b, representing the ratings of two people in three different categories. The function compares the ratings of each category and returns the number of points each person has earned.
-
-```python
-def compareTriplets(a, b):
-    points = [0, 0]
-    for i in range(3):
-        if a[i] > b[i]:
-            points[0] += 1
-        elif a[i] < b[i]:
-            points[1] += 1
-    return points
-
-```
- The ```compareTriplets``` function is defined, which takes in two lists, a and b.
-
- Inside the function, a ```list called points``` is initialized with two elements, representing the ```points earned by Alice and Bob```.
-
- A for loop is used to iterate over the ratings in the a and b lists.
-
-Inside the loop, an if statement is used to compare the ratings of each category.
-
-If ``` a is greater than b```, ```Alice earns a point```.
-
-If  ```a is less than  b```, ```Bob earns a point```.
-
-Finally, the ```points list is returned```.
-
-```python
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
-result = compareTriplets(a, b)
-print(*result)
-```
- In this part, we take ```input from the user``` for the ratings of the two people. The ratings are entered as space-separated values. The map function is used to convert the input values to integers and store them in lists a and b. Then, we call the compareTriplets function with the a and b lists as arguments. The result is stored in the result variable. Finally, we use the print function with the * operator to unpack the elements of the result list and print them.
-
-
-#### Sample input & output
-input
-```
-4 5 6
-7 5 3
-```
-output
-```
-1 1
+8 3 4
+1 5 9
+6 7 2
 ```
 ****
-## 4.Diagonal Difference
+## 7.Missing Numbers
 
-  - [Problem](https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Diagonal_Difference/diagonaldifference.py) (navigate to the Solution file)
+  - [Problem](https://www.hackerrank.com/challenges/missing-numbers/problem?isFullScreen=true)
+  - [Solution]()
   - Explanation:
-  > In this problem, we have to calculate the diagonal difference in a square matrix. The diagonal difference is the absolute difference between the sums of its diagonals.
 
-The diagonalDifference function takes a square matrix as input and calculates the diagonal difference.
+  1.Two dictionaries, count_arr and count_brr, are created to store the counts of numbers in the arr and brr lists, respectively.
 
+2.The program then iterates through the arr list and populates the count_arr dictionary, counting how many times each number appears in arr.
+
+3.Similarly, it iterates through the brr list and populates the count_brr dictionary with counts of numbers in brr.
+
+4.An empty list called missing_numbers is initialized to store the missing numbers.
+
+5.The program compares the counts of numbers in the arr and brr lists. If a number is present in brr but not in arr, or if it appears more times in brr than in arr, it is considered a missing number, and it is added to the missing_numbers list.
+
+6.The missing_numbers list is sorted in ascending order.
+
+7.The function returns the sorted list of missing numbers.
+
+### Program
 ```python
-def diagonalDifference(arr):
-    n = len(arr)
-    s1, s2 = 0, 0
+#!/bin/python3
 
-    for i in range(n):
-        s1 += arr[i][i]
-        s2 += arr[i][n - i - 1]
+import math
+import os
+import random
+import re
+import sys
 
-    return abs(s1 - s2)
-
-n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-
-result = diagonalDifference(arr)
-print(result)
-```
- 
-It uses two variables, s1 and s2, to store the sums of the elements on the primary and secondary diagonals, respectively. 
-
-It iterates over the rows of the matrix and adds the corresponding element to the sums. Finally, it returns the absolute difference between s1 and s2.
-
-The main program prompts the user to enter the size of the matrix (n) and then takes n lines of input, each containing n space-separated integers. It creates a 2D list arr to store the matrix. 
-
-It then calls the diagonalDifference function with arr as the argument and assigns the result to the variable result. 
-
-Finally, it prints the result.
-
-#### Sample input & output
-input
-```
-3
-1 2 3
-4 5 6
-7 8 9
-```
- the size of the matrix = 3
-
-The primary diagonal elements are 1, 5, and 9, and their sum is 1 + 5 + 9 = 15. 
-
-The secondary diagonal elements are 3, 5, and 7, and their sum is 3 + 5 + 7 = 15.
-
-The absolute difference between the sums of the primary and secondary diagonals is |15 - 15| = 0.
-
-output
-```
-0
-```
-****
-## 5.Grading Students
-  - [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Grading_Students/gradingstudents.py) (navigate to the Solution file)
-  - Explanation:
-  > In this problem, I created a program that takes input for the number of grades to be entered, and then prompts the user to enter each grade. The program then rounds each grade according to a specific rule and prints the rounded grades.
-```python
-n = int(input().strip())
-
-for _ in range(n):
-    grade = int(input().strip())
+def missingNumbers(arr, brr):
+    # Create dictionaries to store the counts of numbers in arr and brr
+    count_arr = {}
+    count_brr = {}
     
-    if grade >= 38 and grade % 5 >= 3:
-        grade += 5 - (grade % 5)
-
-    print(grade)
-
-```
-
-It takes input for the number of grades to be entered as n.
-
- It uses a for loop to iterate over the range of the number of grades.
-
- Inside the loop, it takes input for each grade.
-
- It checks if the grade is greater than or equal to 38 and if the remainder of the grade divided by 5 is greater than or equal to 3.
-
- If the condition is true, it rounds the grade by adding the difference between 5 and the remainder of the grade divided by 5.
- 
- Finally, it prints the rounded grade.
-
-```
-n = int(input().strip())  # Enter the number of grades: 3
-
-for _ in range(n):
-    grade = int(input().strip())  # Enter the grades: 73, 67, 41
+    # Populate count_arr with counts from arr
+    for num in arr:
+        if num in count_arr:
+            count_arr[num] += 1
+        else:
+            count_arr[num] = 1
     
-    if grade >= 38 and grade % 5 >= 3:
-        grade += 5 - (grade % 5)
+    # Populate count_brr with counts from brr
+    for num in brr:
+        if num in count_brr:
+            count_brr[num] += 1
+        else:
+            count_brr[num] = 1
     
-    print(grade)
-Output:
+    # Initialize a list to store the missing numbers
+    missing_numbers = []
+    
+    # Compare the counts in arr and brr to find missing numbers
+    for num, count in count_brr.items():
+        if num not in count_arr or count_arr[num] < count:
+            missing_numbers.append(num)
+    
+    return sorted(missing_numbers)
 
-75
-67
-41
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    m = int(input().strip())
+
+    brr = list(map(int, input().rstrip().split()))
+
+    result = missingNumbers(arr, brr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
 ```
-In this example, we entered 3 grades: 73, 67, and 41. The first grade, 73, is rounded up to 75 because the remainder of 73 divided by 5 is 3, which is greater than or equal to 3. The second grade, 67, remains the same because the remainder of 67 divided by 5 is 2, which is less than 3. The third grade, 41, also remains the same because it is less than 38.
-****
-
-## 7.Plus Minus
-
-  - [Problem](https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true) (navigate to the Problem)
-  - [Solution](Plus_Minus/plusminus.py) (navigate to the Solution file)
-  - Explanation:
-  >The plusMinus function is a Python function that takes an array of integers as input and calculates the ratio of positive, negative, and zero elements in the array. It then prints these ratios with a precision of 6 decimal places.
-
-```python
-def plusMinus(arr):
-    n = len(arr)
-    countPositive = sum(1 for num in arr if num > 0)
-    countNegative = sum(1 for num in arr if num < 0)
-    countZero = n - countPositive - countNegative
-
-    print(f"{countPositive/n:.6f}")
-    print(f"{countNegative/n:.6f}")
-    print(f"{countZero/n:.6f}")
-```
- ```sum(1 for num in arr if num > 0)```: This expression uses a generator expression to count the number of positive elements in the array. It iterates over each element num in the array arr and increments the count by 1 if the element is greater than 0.
-
- ```sum(1 for num in arr if num < 0)```: This expression counts the number of negative elements in the array using a similar approach as above, but checks if the element is less than 0.
-
- ```n - countPositive - countNegative```: This expression calculates the number of zero elements in the array by subtracting the counts of positive and negative elements from the total number of elements in the array.
-
-
- The function takes an array arr as input and performs the calculations to determine the ratios of positive, negative, and zero elements. It then prints these ratios.
-
-```python
-#Input
-n = int(input())
-arr = list(map(int, input().split()))
-
-plusMinus(arr)
-```
- In this part, the user is prompted to enter the number of elements in the array (n). Then, the user is asked to enter the elements of the array separated by spaces. 
- 
- The map function is used to convert the input string into a list of integers. Finally, the plusMinus function is called with the array as the argument.
-
 #### Sample input & output
 input
 ```
-3
-5 -3 2
+10
+203 204 205 206 207 208 203 204 205 206
+13
+203 204 204 205 206 207 205 208 203 206 205 206 204
 ```
 output
 ```
-0.666667
-0.333333
-0.000000
+204 205 206
 ```
 ****
-
-## 9.StairCase
-
-  - [Problem](https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true) (navigate to the Problem)
-  - [Solution](Staircase/Staircase.py) (navigate to the Solution file)
-  - Explanation:
-  >To create the staircase pattern, we will use nested loops and the print() function in Python. The outer loop will iterate over the number of steps, and the inner loops will handle the printing of spaces and "#" symbols.
-
-
-```python
-def print_stair(n):
-    for i in range(1, n+1):
-        for j in range(i, n):
-            print(" ", end="")
-        
-        for k in range(1, i+1):
-            print("#", end="")
-        
-        print()
-
-if __name__ == "__main__":
-    n = int(input("Enter the number of steps: "))
-    print_stair(n)
-```
-The ``` print_stair() ``` function takes an integer n as input, which represents the number of steps in the staircase. The function uses two nested loops to print the spaces and "#" symbols.
-
-The outer loop iterates from 1 to n+1, representing the rows of the staircase. The inner loop, ``` for j in range(i, n)```, prints the spaces before the "#" symbols. The number of spaces decreases as we move down the rows.
-
-The second inner loop, ```for k in range(1, i+1)```, prints the "#" symbols. The number of "#" symbols increases as we move down the rows.
-
-Finally, the ```print()``` function is used to print a new line after each row of the staircase.
-
-In the main block, the user is prompted to enter the number of steps. The input is converted to an integer using the int() function. Then, the print_stair() function is called with the user-provided input.
-
-#### Sample input & output
-input
-```
-Enter the number of steps: 5
-```
-output
-```
-    # 
-   ##
-  ###
- ####
-#####
-```
-
-by Anandha krishnan
