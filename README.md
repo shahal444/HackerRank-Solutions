@@ -65,8 +65,9 @@ The sum of the array is: 15
   - [Problem](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)(navigate to the Problem)
   - [Solution](Birthday_Cake_Candles/birthdaycakecandles.py) (navigate to the Solution file)
   - Explanation:
-  > For this problem, we write a function called birthdayCakeCandles that takes in a list of candle heights as input and returns the count of the tallest candles. The code also includes an input section where the user can provide the number of candles and their heights.
+  > In this problem, we write a function called birthdayCakeCandles that takes in a list of candle heights as input and returns the count of the tallest candles. The code also includes an input section where the user can provide the number of candles and their heights.
 
+--Program--
 ```python
 def birthdayCakeCandles(candles):
     max_height = max(candles)
@@ -79,22 +80,7 @@ if __name__ == '__main__':
     result = birthdayCakeCandles(candles)
     print(result)
 ```python
-# Input
-candles_count = int(input())
-candles = list(map(int, input().split()))
 
-```
-The input section prompts the user to enter the number of candles and their heights.
-The input is processed and stored in the candles_count and candles variables.
-The birthdayCakeCandles function is called with the candles list as an argument.
-```python
-# Calculate and output the result
-result = birthdayCakeCandles(candles)
-print(result)
-
-```
- The result is stored in the result variable.
- The result is printed to the console.
 
 #### Sample input & output
 input
