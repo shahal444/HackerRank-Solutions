@@ -393,3 +393,79 @@ output
 204 205 206
 ```
 ****
+## 8.Compare The Tripplets
+  - [Problem](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)
+  - [Solution]
+  - Explanation:
+  > In this problem, we have a function called ```compareTriplets``` that takes in two lists, a and b, representing the ratings of two people in three different categories. The function compares the ratings of each category and returns the number of points each person has earned.
+
+1.Import necessary libraries and modules.
+
+2.Define a function called compareTriplets that takes two lists, 'a' and 'b', as input.
+
+3.Initialize two variables, alice_score and bob_score, to 0. These variables will keep track of Alice and Bob's total scores in the game.
+
+4.Use a loop to iterate through the three elements of the lists (representing the three categories of the game).
+
+5.Inside the loop, compare the scores in the current category:
+
+6.If Alice's score is greater than Bob's score, increment alice_score by 1.
+If Bob's score is greater than Alice's score, increment bob_score by 1.
+After looping through all three categories, the function returns a list containing two values: Alice's total score and Bob's total score.
+
+7.In the if __name__ == '__main__': block, the program takes input for the lists 'a' and 'b' from the user. It assumes that these lists contain three integers each.
+
+8.The compareTriplets function is called with 'a' and 'b' as arguments, and the result is stored in the 'result' variable. The result is a list of two integers, representing Alice's and Bob's total scores.
+
+9.The program opens an output file specified by the environment variable 'OUTPUT_PATH' and writes the two scores to the file.
+
+70.Finally, the output file is closed, and the program finishes.
+
+```python
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def compareTriplets(a, b):
+    alice_score = 0
+    bob_score = 0
+
+    # Iterate through the elements of a and b
+    for i in range(3):
+        if a[i] > b[i]:
+            alice_score += 1
+        elif a[i] < b[i]:
+            bob_score += 1
+
+    return [alice_score, bob_score]
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+```
+#### Sample input & output
+input
+```
+5 6 7
+3 6 10
+```
+output
+```
+1 1
+```
+****
